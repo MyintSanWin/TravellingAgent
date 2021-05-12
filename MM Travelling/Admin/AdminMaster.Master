@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="MM_Travelling.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+     <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $('.slide img:gt(0)').hide();
+            setInterval(function () {
+                $('.slide :first-child').fadeOut(2500).next('img').fadeIn(2500).end().appendTo('.slide');
+            }, 2500);
+        })
+       </script>
+    
+     <style>
+        
+        
+         .slide {
+             width:920px;
+             height:330px;
+             
+         }
+             .slide img {
+                 position:absolute;
+                 width:920px;
+             height:330px;
+             }
+         body {
+             background-color:skyblue;
+         }
+
+
+       
+        .nav {
+            height:60px;
+            width:100%;
+            background-color:pink;
+            margin-top:15px;
+       
+        
+         
+        }
+        ul {
+            height:60px;
+              margin: 0;
+              padding: 0;
+            }
+
+        li {
+            display:inline;
+            height:60px;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 21px 98px 0px;
+            text-decoration: none;
+          
+        }
+    
+     </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <center>
+      <div class="slide" style="border-bottom-style:solid; border-top-style:solid; border-width:thick;" >
+          
+        <img src="../Admin/Images/b.jpg" />
+        <img src="../Admin/Images/a.jpg" />
+        <img src="../Admin/Images/c.jpg" />
+        <img src="../Admin/Images/d.jpg" />
+        <img src="../Admin/Images/e.jpg" />
+
+
+       </div>
+       <div class="nav">
+        
+                <ul>
+                  <li><a href="default.aspx">Home</a></li>
+                  <li><a href="Packages.aspx">Packages</a></li>
+                  <li><a href="Login.aspx">Login</a></li>
+
+                  <li><a href="Contact.aspx">Contact</a></li>
+                  <li><a href="About.aspx">About</a></li>
+                </ul>
+          
+        </div>
+</center>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

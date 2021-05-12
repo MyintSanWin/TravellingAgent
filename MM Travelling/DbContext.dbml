@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Travelling" Class="DbContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-R5TDNRQ;Initial Catalog=Travelling;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TravellingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Transporation" Member="tbl_Transporations">
+    <Type Name="tbl_Transporation">
+      <Column Name="TransporationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransporationName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hotel" Member="tbl_Hotels">
+    <Type Name="tbl_Hotel" Id="ID1">
+      <Column Name="HotelID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HotelName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Package" Member="tbl_Packages">
+    <Type Name="tbl_Package" Id="ID2">
+      <Column Name="PackageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PackageName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HotelID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DaysAndNights" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StayAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FoodAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BusAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrainAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AirLineAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Service" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Booking" Member="tbl_Bookings">
+    <Type Name="tbl_Booking">
+      <Column Name="BookingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PackageName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NoOfDays_Nights" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfPeople" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StayAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookingStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransationStatus" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="tbl_Payments">
+    <Type Name="tbl_Payment">
+      <Column Name="PaymentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookingID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="StayAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DaysAndNights" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NoOfPeople" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="tbl_Admins">
+    <Type Name="tbl_Admin" Id="ID3">
+      <Column Name="AdminID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdminName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="tbl_Customers">
+    <Type Name="tbl_Customer" Id="ID4">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NRC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SelectHotelAll" Method="SelectHotelAll">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.SelectPackages" Method="SelectPackages">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.AdminLogIn" Method="AdminLogIn">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.CustomerLogIn" Method="CustomerLogIn">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType IdRef="ID4" />
+  </Function>
+</Database>
